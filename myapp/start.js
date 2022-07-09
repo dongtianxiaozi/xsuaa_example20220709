@@ -6,14 +6,13 @@ const JWTStrategy = require('@sap/xssec').JWTStrategy;
 const app = express();
 
 
-const services = xsenv.getServices({ uaa:'nodeuaa' });
+const services = xsenv.getServices({ uaa:'sknodeuaa' });
 
 passport.use(new JWTStrategy(services.uaa));
 
 
 app.use(passport.initialize());
 app.use(passport.authenticate('JWT', { session: false }));
-
 
 
 app.get('/', function (req, res, next) {

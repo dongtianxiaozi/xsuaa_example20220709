@@ -2,16 +2,16 @@
 applications:
   - name: myapp-secured-demo1
     routes:
-      - route: node-12345671-2.cfapps.eu10.hana.ondemand.com
+      - route: sktest20220709srv.cfapps.eu12.hana.ondemand.com
     path: myapp
     memory: 128M
     buildpack: nodejs_buildpack
     services:
-      - nodeuaa
+      - sknodeuaa
 
   - name: approuter1
     routes:
-      - route: approuter1-12345671-2.cfapps.eu10.hana.ondemand.com
+      - route: sktest20220709approuter.cfapps.eu12.hana.ondemand.com
     path: approuter
     memory: 128M
     env:
@@ -19,9 +19,9 @@ applications:
         [
           {
             "name":"myapp",
-            "url":"https://node-12345671-2.cfapps.eu10.hana.ondemand.com",
+            "url":"https://sktest20220709srv.cfapps.eu12.hana.ondemand.com",
             "forwardAuthToken": true
           }
         ]
     services:
-      - nodeuaa
+      - sknodeuaa
