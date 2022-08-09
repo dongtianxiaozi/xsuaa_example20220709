@@ -1,15 +1,15 @@
 ---
 applications:
-  - name: myapp-secured-demo1
+  - name: sk_test_security2
     routes:
       - route: sktest20220709srv.cfapps.eu12.hana.ondemand.com
     path: myapp
     memory: 128M
     buildpack: nodejs_buildpack
     services:
-      - sknodeuaa
+      - sknodeuaa20220810
 
-  - name: approuter1
+  - name: sk_test_approuter2
     routes:
       - route: sktest20220709approuter.cfapps.eu12.hana.ondemand.com
     path: approuter
@@ -24,4 +24,4 @@ applications:
           }
         ]
     services:
-      - sknodeuaa
+      - sknodeuaa20220810
